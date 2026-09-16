@@ -228,3 +228,84 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* Join Buttons */
+.join-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* IP Display */
+.ip-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    background: #10131b;
+    border: 1px solid #303747;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+#server-ip {
+    color: #f4d18b;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+/* Copy Button */
+.copy-btn {
+    background: #303747;
+    color: white;
+    border: 1px solid #c99a48;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.copy-btn:hover {
+    background: #c99a48;
+    color: #111;
+}
+
+/* Discord Button */
+.discord-btn {
+    background: #5865F2;
+    color: white;
+}
+
+.discord-btn:hover {
+    background: #4752C4;
+    transform: translateY(-2px);
+}
+
+/* Copy Message */
+.copy-message {
+    color: #8fda9d;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Main Copy IP Button */
+#copy-ip-main {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+@media (max-width: 500px) {
+    .join-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .ip-box {
+        flex-direction: column;
+    }
+}
