@@ -55,8 +55,10 @@ header {
 }
 
 /* Hero */
+/* FANTASY HERO BACKGROUND */
+
 .hero {
-    min-height: 650px;
+    min-height: 680px;
     padding: 100px 20px;
     display: flex;
     flex-direction: column;
@@ -64,11 +66,38 @@ header {
     align-items: center;
     text-align: center;
 
+    position: relative;
+    overflow: hidden;
+
     background:
-        linear-gradient(rgba(10, 13, 20, 0.75),
-                        rgba(10, 13, 20, 0.95)),
-        url("https://images.unsplash.com/photo-1500534623283-312aade485b7")
-        center / cover;
+        linear-gradient(
+            rgba(8, 11, 18, 0.35),
+            rgba(8, 11, 18, 0.92)
+        ),
+        url("image/mayari-smp-icon.jpg") 
+}
+
+/* Dark cinematic overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8, 11, 18, 0.15),
+            rgba(8, 11, 18, 0.75)
+        );
+
+    pointer-events: none;
+}
+
+/* Keep text above the overlay */
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
 }
 
 .subtitle {
@@ -307,5 +336,772 @@ footer {
 
     .ip-box {
         flex-direction: column;
+    }
+}/* MAYARI SMP LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: Georgia, serif;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo-symbol {
+    color: #e8bd70;
+    font-size: 18px;
+}
+
+.logo-name {
+    color: #f4d18b;
+}
+
+.logo-smp {
+    color: #ffffff;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+/* HERO LOGO */
+
+.hero-logo {
+    text-align: center;
+}
+
+.hero-small {
+    color: #d6a85a;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.hero-divider {
+    width: 180px;
+    height: 2px;
+    background: #c99a48;
+    margin: 18px auto;
+}
+
+.hero-tagline {
+    color: #e5d4b5;
+    letter-spacing: 4px;
+    font-size: 13px;
+}/* PROFESSIONAL BUTTON ANIMATIONS */
+
+.btn {
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.primary-btn {
+    background: linear-gradient(
+        135deg,
+        #e8bd70,
+        #b98636
+    );
+
+    color: #17120b;
+
+    box-shadow:
+        0 4px 0 #76501f,
+        0 0 20px rgba(201, 154, 72, 0.12);
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 7px 0 #76501f,
+        0 0 25px rgba(201, 154, 72, 0.35);
+}
+
+.primary-btn:active {
+    transform: translateY(1px);
+}
+
+.discord-btn {
+    background: #5865f2;
+    color: white;
+
+    box-shadow: 0 4px 0 #3d46a5;
+}
+
+.discord-btn:hover {
+    transform: translateY(-4px);
+    background: #6975ff;
+
+    box-shadow:
+        0 7px 0 #3d46a5,
+        0 0 20px rgba(88, 101, 242, 0.35);
+}
+
+.discord-btn:active {
+    transform: translateY(1px);
+}/* HERO ENTRANCE ANIMATION */
+
+.hero-logo {
+    animation: heroFadeIn 1.2s ease-out both;
+}
+
+.hero-buttons {
+    animation: heroFadeIn 1.2s ease-out 0.35s both;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}/* MAGICAL FLOATING PARTICLES */
+
+.particles {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.particles span {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    background: #f4d18b;
+    border-radius: 50%;
+
+    opacity: 0;
+
+    animation: floatParticle 7s infinite ease-in-out;
+}
+
+/* Different particle positions */
+
+.particles span:nth-child(1) {
+    left: 10%;
+    top: 70%;
+    animation-delay: 0s;
+}
+
+.particles span:nth-child(2) {
+    left: 25%;
+    top: 85%;
+    animation-delay: 1s;
+}
+
+.particles span:nth-child(3) {
+    left: 40%;
+    top: 65%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child(4) {
+    left: 55%;
+    top: 80%;
+    animation-delay: 3s;
+}
+
+.particles span:nth-child(5) {
+    left: 70%;
+    top: 60%;
+    animation-delay: 4s;
+}
+
+.particles span:nth-child(6) {
+    left: 82%;
+    top: 75%;
+    animation-delay: 2.5s;
+}
+
+.particles span:nth-child(7) {
+    left: 90%;
+    top: 50%;
+    animation-delay: 1.5s;
+}
+
+.particles span:nth-child(8) {
+    left: 15%;
+    top: 40%;
+    animation-delay: 5s;
+}
+
+/* Particle movement */
+
+@keyframes floatParticle {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    80% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-180px) scale(1.2);
+    }
+}/* FANTASY FEATURE CARDS */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 35px;
+}
+
+.feature-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(39, 45, 59, 0.95),
+            rgba(22, 27, 38, 0.95)
+        );
+
+    border: 1px solid #3d4351;
+    border-radius: 12px;
+
+    padding: 32px 22px;
+
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Gold line at top */
+.feature-card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #c99a48,
+        transparent
+    );
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #c99a48;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(201, 154, 72, 0.08);
+}
+
+.feature-card h3 {
+    color: #f4d18b;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    margin-bottom: 14px;
+}
+
+.feature-card p {
+    color: #b9c0cc;
+}/* PROFESSIONAL NAVIGATION */
+
+header {
+    background: rgba(14, 18, 27, 0.95);
+    border-bottom: 1px solid #3d4351;
+
+    backdrop-filter: blur(12px);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #d4d8e0;
+    text-decoration: none;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f4d18b;
+}/* MOBILE DESIGN */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .hero {
+        min-height: 560px;
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(32px, 10vw, 60px);
+        letter-spacing: 2px;
+    }
+
+    .hero-small {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+
+    .hero-tagline {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .section h2 {
+        font-size: 30px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}/* REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+/* =========================================
+   MAYARI SMP SERVER STATUS
+========================================= */
+
+.status-section {
+    background: #10131b;
+    max-width: none;
+    padding: 85px 20px;
+}
+
+.section-label {
+    color: #c99a48;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.status-card {
+    max-width: 850px;
+    margin: 35px auto 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #252c3b,
+            #171c28
+        );
+
+    border: 1px solid #4b4b46;
+    border-radius: 14px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* Status Header */
+
+.status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding-bottom: 25px;
+    border-bottom: 1px solid #3b414d;
+}
+
+.status-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.status-title h3 {
+    color: #f4d18b;
+    font-family: Georgia, serif;
+    font-size: 23px;
+}
+
+.status-title p {
+    color: #aeb5c2;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* Status Dot */
+
+.status-dot {
+    width: 16px;
+    height: 16px;
+
+    background: #888;
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+.status-dot.online {
+    background: #4ed47a;
+    box-shadow: 0 0 15px rgba(78, 212, 122, 0.5);
+}
+
+.status-dot.offline {
+    background: #e45d5d;
+}
+
+/* Status Badge */
+
+.status-badge {
+    background: #343b49;
+    color: #c8ced8;
+
+    border-radius: 20px;
+    padding: 7px 14px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-badge.online {
+    background: #214e36;
+    color: #8df0ae;
+}
+
+.status-badge.offline {
+    background: #542c2c;
+    color: #ffadad;
+}
+
+/* Status Details */
+
+.status-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+
+    padding: 28px 0;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    background: rgba(0, 0, 0, 0.14);
+    border: 1px solid #343c4a;
+    border-radius: 10px;
+
+    padding: 20px;
+}
+
+.status-icon {
+    font-size: 28px;
+}
+
+.status-label {
+    color: #aeb5c2;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.status-item h3 {
+    color: #f4d18b;
+    font-size: 18px;
+    overflow-wrap: anywhere;
+}
+
+/* Refresh Button */
+
+.refresh-btn {
+    display: block;
+    margin: 0 auto;
+
+    background: #c99a48;
+    color: #17120b;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 12px 24px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.refresh-btn:hover {
+    background: #e8bd70;
+    transform: translateY(-2px);
+}
+
+.refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
+}
+
+.last-updated {
+    text-align: center;
+    color: #8e96a5;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/* Status Mobile Design */
+
+@media (max-width: 700px) {
+
+    .status-card {
+        padding: 20px;
+    }
+
+    .status-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .status-details {
+        grid-template-columns: 1fr;
+    }
+
+    .status-item {
+        padding: 16px;
+    }
+}
+/* =========================================
+   MAYARI SMP SERVER IDENTITY
+========================================= */
+
+.server-identity {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #3b414d;
+}
+
+.server-icon {
+    width: 100px;
+    height: 100px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    border: 2px solid #c99a48;
+
+    box-shadow:
+        0 0 20px rgba(201, 154, 72, 0.15);
+}
+
+.server-identity-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.server-identity-text h3 {
+    color: #f4d18b;
+
+    font-family: Georgia, serif;
+
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+#server-motd {
+    color: #d4d8e0;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.server-address-small {
+    color: #8e96a5;
+    font-size: 13px;
+    margin-top: 5px;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   PLAYER LIST
+========================================= */
+
+.player-list-section {
+    border-top: 1px solid #3b414d;
+    padding-top: 25px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.player-list-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    margin-bottom: 18px;
+}
+
+.player-list-heading h3 {
+    color: #f4d18b;
+    font-family: Georgia, serif;
+    font-size: 21px;
+}
+
+#player-list-count {
+    color: #8df0ae;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Player names grid */
+
+.player-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.player-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #202735;
+    border: 1px solid #343c4a;
+    border-radius: 8px;
+
+    padding: 12px;
+
+    color: #e5e8ee;
+    font-size: 14px;
+
+    overflow-wrap: anywhere;
+}
+
+.player-name::before {
+    content: "";
+
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    background: #4ed47a;
+    border-radius: 50%;
+}
+
+/* Empty player list */
+
+.no-players {
+    grid-column: 1 / -1;
+
+    color: #aeb5c2;
+    text-align: center;
+
+    padding: 25px;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .server-identity {
+        align-items: center;
+    }
+
+    .server-icon {
+        width: 75px;
+        height: 75px;
+    }
+
+    .server-identity-text h3 {
+        font-size: 22px;
+    }
+
+    .player-list {
+        grid-template-columns: 1fr;
     }
 }
