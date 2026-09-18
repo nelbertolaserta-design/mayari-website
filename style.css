@@ -83,7 +83,7 @@ header {
 
 .hero-image {
     display: block;
-    width: min(490px, 72vw);
+    width: min(380px, 72vw);
     max-width: 100%;
     height: auto;   
 }
