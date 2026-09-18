@@ -120,6 +120,46 @@ if (refreshButton) {
 
 fetchServerStatus();
 
+const cosmeticCards = document.querySelectorAll(".cosmetic-card");
+
+cosmeticCards.forEach(card => {
+    card.addEventListener("toggle", () => {
+        if (!card.open) return;
+
+        cosmeticCards.forEach(otherCard => {
+            if (otherCard !== card) otherCard.open = false;
+        });
+
+        const details = card.querySelector(".cosmetic-details");
+        const title = card.querySelector("summary span");
+
+        if (!details || details.querySelector(".cosmetic-close")) return;
+
+        const heading = document.createElement("h2");
+        heading.textContent = title ? title.textContent : "Cosmetic Details";
+        heading.className = "cosmetic-popup-title";
+
+        const closeButton = document.createElement("button");
+        closeButton.type = "button";
+        closeButton.className = "cosmetic-close";
+        closeButton.textContent = "Close";
+        closeButton.addEventListener("click", () => {
+            card.open = false;
+        });
+
+        details.prepend(heading);
+        details.appendChild(closeButton);
+    });
+});
+
+document.addEventListener("keydown", event => {
+    if (event.key !== "Escape") return;
+
+    cosmeticCards.forEach(card => {
+        card.open = false;
+    });
+});
+
 async function copyServerIp() {
     const ip = document.getElementById('server-ip').textContent.trim();
     const message = document.getElementById('copy-message');

@@ -182,6 +182,163 @@ header {
     margin-bottom: 35px;
 }
 
+.page-hero {
+    max-width: 1100px;
+    margin: auto;
+    padding: 100px 20px 55px;
+    text-align: center;
+}
+
+.page-hero h1 {
+    color: #f4d18b;
+    font-family: Georgia, serif;
+    font-size: clamp(40px, 8vw, 68px);
+    margin: 10px 0;
+}
+
+.page-hero .section-intro {
+    max-width: 650px;
+    margin: 0 auto 28px;
+}
+
+.logo {
+    text-decoration: none;
+}
+
+.cosmetics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 60px;
+    text-align: left;
+    max-width: 30000px;
+    margin: 100px auto;
+}
+
+.cosmetic-card {
+    overflow: hidden;
+    background: #1b2130;
+    border: 5px solid #303747;
+    border-radius: 25px;
+}
+
+.cosmetic-card summary {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    cursor: pointer;
+    list-style: none;
+    color: #f4d18b;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: bold;
+    min-height: 0;
+    padding: 0;
+}
+
+.cosmetic-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.cosmetic-card summary img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 350 / 305;
+    object-fit: contain;
+    background: #10131b;
+    border: 0;
+    border-bottom: 1px solid #c99a48;
+}
+
+.cosmetic-card summary span {
+    display: block;
+    width: 100%;
+    padding: 16px 42px 16px 16px;
+    text-align: center;
+}
+
+.cosmetic-card summary b {
+    position: absolute;
+    right: 14px;
+    bottom: 12px;
+    color: #c99a48;
+    font-size: 22px;
+    transition: transform 0.2s ease;
+}
+
+.cosmetic-card[open] summary b {
+    transform: rotate(180deg);
+}
+
+.cosmetic-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1001;
+    width: min(560px, calc(100vw - 36px));
+    max-height: min(680px, calc(100vh - 36px));
+    overflow-y: auto;
+    transform: translate(-50%, -50%);
+    border: 1px solid #c99a48;
+    border-radius: 14px;
+    background: #1b2130;
+    padding: 28px 30px;
+    color: #b9c0cc;
+    box-shadow:
+        0 20px 65px rgba(0, 0, 0, 0.75),
+        0 0 0 100vmax rgba(5, 7, 12, 0.78);
+}
+
+.cosmetic-details strong {
+    display: block;
+    color: #f4d18b;
+    margin-bottom: 6px;
+}
+
+.cosmetic-popup-title {
+    color: #f4d18b;
+    font-family: Georgia, serif;
+    margin-bottom: 18px;
+    padding-right: 45px;
+}
+
+.cosmetic-details p {
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+.cosmetic-details ul {
+    padding-left: 20px;
+    color: #f4d18b;
+    list-style-type: "▪  ";
+}
+
+.cosmetic-details li {
+    margin: 4px 0;
+}
+
+.cosmetic-close {
+    display: block;
+    margin: 22px 0 0 auto;
+    border: 1px solid #c99a48;
+    border-radius: 6px;
+    background: transparent;
+    color: #f4d18b;
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+    padding: 8px 16px;
+}
+
+.cosmetic-close:hover {
+    background: #c99a48;
+    color: #17120b;
+}
+
 /* Feature Cards */
 .features-grid {
     display: grid;
@@ -263,6 +420,21 @@ footer {
 
     .features-grid {
         grid-template-columns: 1fr;
+    }
+
+    .cosmetics-grid {
+        grid-template-columns: 1fr;
+        width: 200px;
+    }
+
+    .cosmetic-card summary img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .page-hero {
+        padding-top: 70px;
     }
 }
 /* Join Buttons */
