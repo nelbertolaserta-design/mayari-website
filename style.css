@@ -61,6 +61,17 @@ header {
     color: #d6a85a;
 }
 
+/* Discord Button */
+.discord-btn {
+    background: #5865F2;
+    color: white;
+}
+
+.discord-btn:hover {
+    background: #4752C4;
+    transform: translateY(-2px);
+}
+
 /* Hero */
 /* FANTASY HERO BACKGROUND */
 
