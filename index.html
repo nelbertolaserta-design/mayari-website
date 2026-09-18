@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mayari SMP | Minecraft Server</title>
+    <title>Mayari SMP</title>
+    <link rel="icon" type="image/png" href="assets/mayari-logo/mayari-icon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,47 +13,42 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-    <span class="logo-symbol">✦</span>
-    <span class="logo-name">MAYARI</span>
-    <span class="logo-smp">SMP</span>
-</div>
+                <span class="logo-symbol">✦</span>
+                <span class="logo-name">MAYARI</span>
+                <span class="logo-smp">SMP</span>
+            </div>
 
             <div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#status">Server Status</a>
-    <a href="#features">Features</a>
-    <a href="#about">About</a>
-    <a href="#join">Join</a>
-</div>
+                <a href="#home">Home</a>
+                <a href="#status">Server Status</a>
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#join">Join</a>
+            </div>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero">
-            
-          <div class="particles" aria-hidden="true">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-</div>       
+            <div class="particles" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-    <p class="hero-small">✦ WELCOME TO ✦</p>
+            <h2 class="hero-small">✦ WELCOME TO ✦</h2>
 
-    <h1>MAYARI SMP</h1>
+            <img src="assets/mayari-logo/mayari-image.png" alt="MAYARI SMP" class="hero-image">
 
-    <div class="hero-divider"></div>
+            <div class="hero-divider"></div>
 
-    <p class="hero-tagline">
-        SURVIVAL • RPG • VANILLA
-    </p>
-</div>
-            <p class="description">
-                Minecraft Survival RPG + Vanilla SMP
+            <p class="hero-tagline">
+                SURVIVAL • RPG • VANILLA
             </p>
 
             <div class="hero-buttons">
@@ -89,13 +85,9 @@
 
 <section id="status" class="section status-section">
 
-    <p class="section-label">✦ SERVER INFORMATION ✦</p>
+    <h3 class="section-label">✦ SERVER INFORMATION ✦</h3>
 
     <h2>Mayari SMP Status</h2>
-
-    <p class="section-intro">
-        Check our server status and see who is online.
-    </p>
 
     <div class="status-card">
 
@@ -103,17 +95,15 @@
         <div class="status-header">
 
             <div class="status-title">
-                <span id="status-dot" class="status-dot"></span>
+                <span id="status-dot" class="status-dot" aria-label="Server offline">
+                    <iframe title="Server status" src="https://lottie.host/embed/ec575775-2c6d-4897-8954-14ce582926d1/wDMa2G7jbT.lottie" loading="lazy" aria-hidden="true"></iframe>
+                </span>
 
                 <div>
                     <h3 id="status-text">Checking Server...</h3>
                     <p id="status-subtitle">Connecting to Mayari SMP</p>
                 </div>
             </div>
-
-            <span class="status-badge" id="status-badge">
-                Loading
-            </span>
 
         </div>
 
@@ -148,7 +138,7 @@
 
         <!-- Refresh Button -->
         <button id="refresh-status" class="refresh-btn">
-            🔄 Refresh Status
+            ↻ Refresh Status
         </button>
 
         <p id="last-updated" class="last-updated">
@@ -161,7 +151,7 @@
         <section id="about" class="section about-section">
             <h2>About Mayari</h2>
             <p>
-                Mayari SMP is a Minecraft Survival RPG + Vanilla SMP
+                Mayari SMP is a Minecraft RPG + SMP
                 community where players can explore, build, complete
                 quests, and enjoy an economy-driven adventure.
             </p>
@@ -176,26 +166,16 @@
 
         <div class="ip-box">
             <span id="server-ip">play.mayari.space :19025</span>
-
-            <button id="copy-ip-btn" class="copy-btn">
-                📋 Copy IP
-            </button>
         </div>
 
         <p><strong>Version:</strong> 26.2</p>
     </div>
 
     <div class="join-buttons">
-        <button id="copy-ip-main" class="btn primary-btn">
+        <button id="copy-ip-main" class="btn primary-btn" type="button" onclick="copyServerIp()">
             📋 Copy Server IP
         </button>
 
-        <a href=https://discord.gg/DnfvGJvGnb
-           target="_blank"
-           rel="noopener noreferrer"
-           class="btn discord-btn">
-            💬 Join Discord
-        </a>
     </div>
 
     <p id="copy-message" class="copy-message" aria-live="polite"></p>
@@ -206,27 +186,6 @@
         <p>© 2026 Mayari SMP. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
-<section class="server-status">
-    <h2>Mayari SMP Server Status</h2>
-
-    <p id="server-status">Checking...</p>
-
-    <p>
-        Players:
-        <span id="player-count">0 / 0</span>
-    </p>
-
-    <p>
-        Version:
-        <span id="server-version">Loading...</span>
-    </p>
-
-    <h3>MOTD</h3>
-    <p id="server-motd"></p>
-
-    <h3>Players Online</h3>
-    <ul id="player-list"></ul>
-</section>
+        <script src="script.js"></script>
+    </body>
+    </html>

@@ -36,6 +36,7 @@ header {
 .logo {
     color: #d6a85a;
     letter-spacing: 2px;
+    size: 24px;
 }
 
 .nav-links {
@@ -65,16 +66,20 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-
     position: relative;
     overflow: hidden;
-
     background:
         linear-gradient(
             rgba(8, 11, 18, 0.35),
             rgba(8, 11, 18, 0.92)
-        ),
-        url("image/mayari-smp-icon.jpg") 
+        );
+}
+
+.hero-image {
+    display: block;
+    width: min(490px, 72vw);
+    max-width: 100%;
+    height: auto;   
 }
 
 /* Dark cinematic overlay */
@@ -82,14 +87,12 @@ header {
     content: "";
     position: absolute;
     inset: 0;
-
     background:
         linear-gradient(
             180deg,
             rgba(8, 11, 18, 0.15),
             rgba(8, 11, 18, 0.75)
         );
-
     pointer-events: none;
 }
 
@@ -97,7 +100,6 @@ header {
 .hero > * {
     position: relative;
     z-index: 1;
-}
 }
 
 .subtitle {
@@ -302,17 +304,6 @@ footer {
     color: #111;
 }
 
-/* Discord Button */
-.discord-btn {
-    background: #5865F2;
-    color: white;
-}
-
-.discord-btn:hover {
-    background: #4752C4;
-    transform: translateY(-2px);
-}
-
 /* Copy Message */
 .copy-message {
     color: #8fda9d;
@@ -434,25 +425,7 @@ footer {
     transform: translateY(1px);
 }
 
-.discord-btn {
-    background: #5865f2;
-    color: white;
-
-    box-shadow: 0 4px 0 #3d46a5;
-}
-
-.discord-btn:hover {
-    transform: translateY(-4px);
-    background: #6975ff;
-
-    box-shadow:
-        0 7px 0 #3d46a5,
-        0 0 20px rgba(88, 101, 242, 0.35);
-}
-
-.discord-btn:active {
-    transform: translateY(1px);
-}/* HERO ENTRANCE ANIMATION */
+/* HERO ENTRANCE ANIMATION */
 
 .hero-logo {
     animation: heroFadeIn 1.2s ease-out both;
@@ -804,45 +777,32 @@ header {
 /* Status Dot */
 
 .status-dot {
-    width: 16px;
-    height: 16px;
-
-    background: #888;
-    border-radius: 50%;
-
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
     flex-shrink: 0;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    overflow: hidden;
 }
 
-.status-dot.online {
-    background: #4ed47a;
-    box-shadow: 0 0 15px rgba(78, 212, 122, 0.5);
+
+
+
+
+
+.status-dot iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    pointer-events: none;
 }
 
-.status-dot.offline {
-    background: #e45d5d;
-}
-
-/* Status Badge */
-
-.status-badge {
-    background: #343b49;
-    color: #c8ced8;
-
-    border-radius: 20px;
-    padding: 7px 14px;
-
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.status-badge.online {
-    background: #214e36;
-    color: #8df0ae;
-}
-
-.status-badge.offline {
-    background: #542c2c;
-    color: #ffadad;
+.status-dot:focus-visible {
+    outline: 2px solid #f4d18b;
+    outline-offset: 4px;
 }
 
 /* Status Details */
@@ -947,9 +907,7 @@ header {
         padding: 16px;
     }
 }
-/* =========================================
-   MAYARI SMP SERVER IDENTITY
-========================================= */
+/* MAYARI SMP SERVER IDENTITY */
 
 .server-identity {
     display: flex;
@@ -1003,9 +961,7 @@ header {
     overflow-wrap: anywhere;
 }
 
-/* =========================================
-   PLAYER LIST
-========================================= */
+/* PLAYER LIST */
 
 .player-list-section {
     border-top: 1px solid #3b414d;
