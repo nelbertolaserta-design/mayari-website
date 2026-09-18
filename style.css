@@ -33,10 +33,17 @@ header {
     gap: 20px;
 }
 
+.icon {
+    width: 64px;
+    height: 64px;
+    color: #d6a85a;
+    image-rendering: pixelated;
+}
+
 .logo {
     color: #d6a85a;
     letter-spacing: 2px;
-    size: 24px;
+    size: 40px;
 }
 
 .nav-links {
@@ -780,8 +787,8 @@ header {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: 28px;
+    height: 28px;
     flex-shrink: 0;
     text-decoration: none;
     transition: transform 0.2s ease;
@@ -794,6 +801,7 @@ header {
 
 
 .status-dot iframe {
+    display: block;
     width: 100%;
     height: 100%;
     border: 0;
@@ -1050,7 +1058,7 @@ header {
 
     .server-icon {
         width: 75px;
-        height: 75px;
+        height: 75zpx;
     }
 
     .server-identity-text h3 {
