@@ -65,15 +65,15 @@ header {
 .discord-btn {
     background: #4752C4;
     color: white;
-    border: 1px solid #10133b;
+    border: 1px solid #2d326e;
     padding: 8px 14px;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
 }
 
 .discord-btn:hover {
-    background: #4752C4;
+    background: #262c6b;
     transform: translateY(-2px);
 }
 
@@ -500,7 +500,7 @@ footer {
 
 /* Copy Message */
 .copy-message {
-    color: #8fda9d;
+    color: #eccc6f;
     font-weight: bold;
     margin-top: 15px;
 }
