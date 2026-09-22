@@ -447,15 +447,7 @@ header {
     color: #b9c0cc;
 }
 
-.about-section {
-    background: #171b26;
-    max-width: none;
-}
 
-.about-section p {
-    max-width: 700px;
-    margin: auto;
-}
 
 .server-info {
     background: #1b2130;
