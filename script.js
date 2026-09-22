@@ -155,7 +155,7 @@ cosmeticCards.forEach(card => {
         discordButton.href = "discord://-/channels/1424987498635067465/1430040430849949718";
         discordButton.target = "_blank";
         discordButton.rel = "noopener noreferrer";
-        discordButton.textContent = "Buy on Discord";
+        discordButton.textContent = "🛒 Buy on Discord";
 
         details.prepend(heading);
         actionRow.append(discordButton, closeButton);
