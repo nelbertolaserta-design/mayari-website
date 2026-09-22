@@ -147,8 +147,19 @@ cosmeticCards.forEach(card => {
             card.open = false;
         });
 
+        const actionRow = document.createElement("div");
+        actionRow.className = "cosmetic-actions";
+
+        const discordButton = document.createElement("a");
+        discordButton.className = "cosmetic-discord";
+        discordButton.href = "discord://-/channels/1424987498635067465/1430040430849949718";
+        discordButton.target = "_blank";
+        discordButton.rel = "noopener noreferrer";
+        discordButton.textContent = "Buy on Discord";
+
         details.prepend(heading);
-        details.appendChild(closeButton);
+        actionRow.append(discordButton, closeButton);
+        details.appendChild(actionRow);
     });
 });
 

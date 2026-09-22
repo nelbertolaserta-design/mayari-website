@@ -63,18 +63,30 @@ header {
 
 /* Discord Button */
 .discord-btn {
-    background: #4752C4;
-    color: white;
-    border: 1px solid #2d326e;
-    padding: 8px 14px;
-    border-radius: 8px;
+    border: 1px solid #6470f4;
+    border-radius: 6px;
+    background: linear-gradient(
+        135deg,
+        #4752C4,
+        #2a3180
+    );
+    color: #fcfcfc;
     cursor: pointer;
+    font: inherit;
     font-weight: bold;
+    padding: 8px 16px;
+    text-decoration: none;
+    box-shadow:
+        0 4px 0 #28307e,
+        0 0 20px #1f2452;
 }
 
 .discord-btn:hover {
-    background: #262c6b;
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 7px 0 #4752C4,
+        0 0 25px #28307e;
 }
 
 /* Hero */
@@ -337,22 +349,70 @@ header {
     margin: 4px 0;
 }
 
-.cosmetic-close {
-    display: block;
-    margin: 22px 0 0 auto;
+.cosmetic-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.cosmetic-close{
     border: 1px solid #c99a48;
     border-radius: 6px;
-    background: transparent;
-    color: #f4d18b;
+    background: linear-gradient(
+        135deg,
+        #e8bd70,
+        #b98636
+    );
+    color: #000000;
     cursor: pointer;
     font: inherit;
     font-weight: bold;
     padding: 8px 16px;
+    text-decoration: none;
+    box-shadow:
+        0 4px 0 #76501f,
+        0 0 20px rgba(201, 154, 72, 0.12);
+}
+
+.cosmetic-discord {
+    border: 1px solid #6470f4;
+    border-radius: 6px;
+    background: linear-gradient(
+        135deg,
+        #4752C4,
+        #2a3180
+    );
+    color: #fcfcfc;
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+    padding: 8px 16px;
+    text-decoration: none;
+    box-shadow:
+        0 4px 0 #28307e,
+        0 0 20px #1f2452;
+}
+
+.cosmetic-close {
+    margin-left: auto;
 }
 
 .cosmetic-close:hover {
-    background: #c99a48;
-    color: #17120b;
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 7px 0 #76501f,
+        0 0 25px rgba(201, 154, 72, 0.35);
+}
+
+.cosmetic-discord:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 7px 0 #4752C4,
+        0 0 25px #28307e;
 }
 
 /* Feature Cards */
