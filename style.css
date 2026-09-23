@@ -9,9 +9,16 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #10131b;
+    background: #3e4c70;
     color: white;
     line-height: 1.6;
+    background-image: url('background/old-spawn.png');
+     min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    overflow-y: auto;
 }
 
 /* Navigation */
@@ -1375,3 +1382,9 @@ header {
         grid-template-columns: 1fr;
     }
 }
+    /* .section-intro {
+        color: #aeb5c2;
+        margin-bottom: 35px;
+        
+    } */
+   
