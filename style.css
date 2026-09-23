@@ -239,18 +239,26 @@ header {
     gap: 60px;
     text-align: left;
     max-width: 30000px;
-    margin: 100px auto;
+    margin: 0 auto 100px;
+}
+
+.page-hero + .cosmetics-section {
+    padding-top: 0;
 }
 
 .cosmetic-card {
+    --card-accent: #b9c0cc;
+    position: relative;
     overflow: hidden;
     background: #1b2130;
-    border: 5px solid #303747;
+    border: 5px solid var(--card-accent);
     border-radius: 25px;
+    box-shadow: 0 0 12px color-mix(in srgb, var(--card-accent) 24%, transparent);
 }
 
 .cosmetic-card summary {
     position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -264,6 +272,33 @@ header {
     font-weight: bold;
     min-height: 0;
     padding: 0;
+}
+
+.cosmetic-card summary::after {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+        110deg,
+        transparent 25%,
+        rgba(255, 255, 255, 0.04) 40%,
+        rgba(255, 255, 255, 0.7) 50%,
+        rgba(255, 255, 255, 0.04) 60%,
+        transparent 75%
+    );
+    content: "";
+    pointer-events: none;
+    transform: translateX(-125%);
+    animation: card-shine 4s ease-in-out infinite;
+}
+
+.cosmetic-card:hover {
+    box-shadow: 0 0 22px color-mix(in srgb, var(--card-accent) 80%, transparent);
+}
+
+.cosmetic-card summary > * {
+    position: relative;
+    z-index: 1;
 }
 
 .cosmetic-card summary::-webkit-details-marker {
@@ -302,6 +337,18 @@ header {
     transform: rotate(180deg);
 }
 
+@keyframes card-shine {
+    0%,
+    45% {
+        transform: translateX(-125%);
+    }
+
+    75%,
+    100% {
+        transform: translateX(125%);
+    }
+}
+
 .cosmetic-details {
     position: fixed;
     top: 50%;
@@ -328,10 +375,31 @@ header {
 }
 
 .cosmetic-popup-title {
-    color: #f4d18b;
+    --popup-accent: #f4d18b;
+    position: relative;
+    width: fit-content;
+    overflow: hidden;
+    color: var(--popup-accent);
     font-family: Georgia, serif;
     margin-bottom: 18px;
     padding-right: 45px;
+}
+
+.cosmetic-popup-title::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        110deg,
+        transparent 25%,
+        rgba(255, 255, 255, 0.04) 40%,
+        rgba(255, 255, 255, 0.75) 50%,
+        rgba(255, 255, 255, 0.04) 60%,
+        transparent 75%
+    );
+    content: "";
+    pointer-events: none;
+    transform: translateX(-125%);
+    animation: card-shine 4s ease-in-out infinite;
 }
 
 .cosmetic-details p {

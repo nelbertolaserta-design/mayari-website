@@ -123,6 +123,17 @@ fetchServerStatus();
 const cosmeticCards = document.querySelectorAll(".cosmetic-card");
 
 cosmeticCards.forEach(card => {
+    const title = card.querySelector("summary span");
+    const accentColor = title ? getComputedStyle(title).color : "";
+
+    if (accentColor) {
+        card.style.setProperty("--card-accent", accentColor);
+        card.style.borderColor = accentColor;
+        card.querySelectorAll(".cosmetic-details p, .cosmetic-details ul").forEach(content => {
+            content.style.color = accentColor;
+        });
+    }
+
     card.addEventListener("toggle", () => {
         if (!card.open) return;
 
@@ -131,13 +142,13 @@ cosmeticCards.forEach(card => {
         });
 
         const details = card.querySelector(".cosmetic-details");
-        const title = card.querySelector("summary span");
-
         if (!details || details.querySelector(".cosmetic-close")) return;
 
         const heading = document.createElement("h2");
         heading.textContent = title ? title.textContent : "Cosmetic Details";
         heading.className = "cosmetic-popup-title";
+        heading.style.color = accentColor || "#f4d18b";
+        heading.style.setProperty("--popup-accent", accentColor || "#f4d18b");
 
         const closeButton = document.createElement("button");
         closeButton.type = "button";
