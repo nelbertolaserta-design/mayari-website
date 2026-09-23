@@ -163,7 +163,7 @@ cosmeticCards.forEach(card => {
 
         const discordButton = document.createElement("a");
         discordButton.className = "cosmetic-discord";
-        discordButton.href = "discord://-/channels/1424987498635067465/1430040430849949718";
+        discordButton.href = "https://discord.com/channels/1424987498635067465/1430040430849949718";
         discordButton.target = "_blank";
         discordButton.rel = "noopener noreferrer";
         discordButton.textContent = "🛒 Buy on Discord";
