@@ -530,6 +530,35 @@ header {
     color: #f4d18b;
 }
 
+.join-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 25px auto 0;
+    align-items: stretch;
+}
+
+.join-card {
+    background: #1b2130;
+    border: 1px solid #303747;
+    border-radius: 10px;
+    padding: 24px;
+}
+
+.join-card h3 {
+    color: #f4d18b;
+}
+
+.join-card .server-info {
+    max-width: none;
+    margin: 20px 0;
+}
+
+.join-discord {
+    margin-top: 24px;
+}
+
 /* Footer */
 footer {
     background: #0b0e14;
@@ -555,6 +584,10 @@ footer {
     }
 
     .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .join-options {
         grid-template-columns: 1fr;
     }
 
@@ -602,6 +635,12 @@ footer {
     overflow-wrap: anywhere;
 }
 
+#bedrock-server-ip {
+    color: #f4d18b;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
 /* Copy Button */
 .copy-btn {
     background: #303747;
@@ -627,6 +666,13 @@ footer {
 
 /* Main Copy IP Button */
 #copy-ip-main {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+#copy-ip-bedrock {
     border: none;
     cursor: pointer;
     font-family: inherit;

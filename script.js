@@ -182,9 +182,9 @@ document.addEventListener("keydown", event => {
     });
 });
 
-async function copyServerIp() {
-    const ip = document.getElementById('server-ip').textContent.trim();
-    const message = document.getElementById('copy-message');
+async function copyServerIp(addressId = 'server-ip', messageId = 'copy-message') {
+    const ip = document.getElementById(addressId).textContent.trim();
+    const message = document.getElementById(messageId);
 
         try {
             await navigator.clipboard.writeText(ip);

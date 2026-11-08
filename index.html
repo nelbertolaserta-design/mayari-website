@@ -126,32 +126,55 @@
     <h2>Ready to Join?</h2>
     <p>Start your adventure in Mayari SMP today!</p>
 
-    <div class="server-info">
-        <p><strong>Server IP:</strong></p>
+    <div class="join-options">
+        <div class="join-card">
+            <h3>Java Edition</h3>
+            <div class="server-info">
+                <p><strong>Server IP:</strong></p>
 
-        <div class="ip-box">
-            <span id="server-ip">play.mayari.space :19025</span>
+                <div class="ip-box">
+                    <span id="server-ip">play.mayari.space:19025</span>
+                </div>
+
+                <p><strong>Version:</strong> 26.3</p>
+            </div>
+
+            <div class="join-buttons">
+                <button id="copy-ip-main" class="btn primary-btn" type="button" onclick="copyServerIp()">
+                    📋 Copy Server IP
+                </button>
+            </div>
+
+            <p id="copy-message" class="copy-message" aria-live="polite"></p>
         </div>
 
-        <p><strong>Version:</strong> 26.2</p>
+        <div class="join-card">
+            <h3>Bedrock Edition</h3>
+            <div class="server-info">
+                <p><strong>Server Address:</strong></p>
+                <div class="ip-box">
+                    <span id="bedrock-server-ip">play.mayari.space</span>
+                    <span id="bedrock-server-ip">Port: 12015</span>
+                </div>
+                <p><strong>Version:</strong> 26.60</p>
+            </div>
+            <div class="join-buttons">
+                <button id="copy-ip-bedrock" class="btn primary-btn" type="button" onclick="copyServerIp('bedrock-server-ip', 'copy-message-bedrock')">
+                    📋 Copy Bedrock Address
+                </button>
+            </div>
+            <p id="copy-message-bedrock" class="copy-message" aria-live="polite"></p>
+        </div>
     </div>
 
-    <div class="join-buttons">
-        <button id="copy-ip-main" class="btn primary-btn" type="button" onclick="copyServerIp()">
-            📋 Copy Server IP
-        </button>
-
-        
-        <a href=https://discord.gg/DnfvGJvGnb
+    <div class="join-buttons join-discord">
+        <a href="https://discord.mayari.space/"
            target="_blank"
            rel="noopener noreferrer"
            class="btn discord-btn">
             💬 Join Discord
         </a>
-
     </div>
-
-    <p id="copy-message" class="copy-message" aria-live="polite"></p>
 </section>
     </main>
 
